@@ -5,6 +5,9 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class ArrayMove {
+    //method to reverse a string
+
+
     public static void main(String[] args) {
 
 
