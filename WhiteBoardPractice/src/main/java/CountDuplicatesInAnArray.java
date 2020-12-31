@@ -1,8 +1,5 @@
-import java.sql.SQLOutput;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
-import java.util.Set;
 
 //Method to find how many elements in the array have duplicates
 
@@ -32,7 +29,7 @@ public class CountDuplicatesInAnArray {
 
     public static void main(String[] args) {
         int[] array = {1, 2, 3, 2, 1, 4};
-        countDuplicates(array);
+        System.out.println(countDuplicates(array));
     }
 }
 
