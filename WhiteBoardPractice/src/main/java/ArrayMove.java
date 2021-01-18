@@ -10,7 +10,7 @@ public class ArrayMove {
 
     public static void main(String[] args) {
 
-
+        System.out.println(findLastNonRepeatedCharInString());
 
 
     }
@@ -21,18 +21,42 @@ public class ArrayMove {
 
     public static char findLastNonRepeatedCharInString() {
         String originalStr = "Maggie";
-        char holder = 0;
+
+        HashMap<Character, Integer> map = new HashMap<>();
+
         for (int i = 0; i < originalStr.length(); i++) {
-            for (int j = 0; j < originalStr.length(); j++) {
-                if (originalStr.charAt(i) != originalStr.charAt(j)) {
-                    holder = originalStr.charAt(i);
-                    break;
-                }
+            if (map.containsKey(originalStr.charAt(i))) {
+                map.put(originalStr.charAt(i), map.get(i)+ 1);
+            } else {
+                map.put(originalStr.charAt(i), 1);
             }
         }
-        System.out.println(holder);
-        return holder;
+        char result = 0;
+        for (Map.Entry<Character, Integer> entry : map.entrySet()) {
+            if (entry.getValue() > 1) {
+                result = entry.getKey();
+            }
+        }
+return result;
     }
+
+
+
+
+
+
+//        char holder = 0;
+//        for (int i = 0; i < originalStr.length(); i++) {
+//            for (int j = 0; j < originalStr.length(); j++) {
+//                if (originalStr.charAt(i) != originalStr.charAt(j)) {
+//                    holder = originalStr.charAt(i);
+//                    break;
+//                }
+//            }
+//        }
+//        System.out.println(holder);
+//        return holder;
+
 
     public static char findFirstNonReppeatedCharInString() {
         String originalStr = "Mmmaggiee";
@@ -112,7 +136,7 @@ public class ArrayMove {
         HashMap<Integer, Integer> countNumbers = new HashMap<>();
         for (int i = 0; i < array.length; i++) {
             if (countNumbers.containsKey(array[i])) {
-                countNumbers.put(array[i], countNumbers.get(array[i] + 1));
+                countNumbers.put(array[i], countNumbers.get(array[i] )+ 1);
             } else {
                 countNumbers.put(array[i], 1);
             }
