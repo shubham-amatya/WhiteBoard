@@ -14,7 +14,7 @@ public class Rotate {
     public static void main(String[] args) {
         int index1 = 3;
         int[] arr2 = {5, 1, 8, 4, 2};
-        System.out.println(Arrays.toString(rotate1(arr2, index1)));
+        System.out.println(Arrays.toString(rotate3(arr2, index1)));
     }
 
 
@@ -39,6 +39,23 @@ public class Rotate {
 
         return result;
 
+        }
+
+
+        public static int[] rotate3 (int[] arr, int index){
+        int[] result = new int[arr.length];
+        int j = 0;
+        int holder;
+            for (int i = index; i <arr.length ; i++) {
+                result[j] = arr[i];
+                j++;
+            }
+            holder = j;
+            for (int i = 0; holder<arr.length ; i++) {
+                result[holder] = arr[i];
+                holder++;
+            }
+            return result;
         }
 
 }
